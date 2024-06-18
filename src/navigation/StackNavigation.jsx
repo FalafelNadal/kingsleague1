@@ -1,13 +1,18 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import AllTeamsScreen from '../screen/AllTeamsScreen'
+import AllTeamsScreen from '../screen/AllTeamsScreen';
 import AllPlayersScreen from '../screen/AllPlayersScreen';
 
 const NavigationStack = createNativeStackNavigator();
 
 export default function StackNavigation() {
     return (
-        <NavigationStack.Navigator>
+        <NavigationStack.Navigator
+            screenOptions={{
+                headerStyle: { backgroundColor: 'gold' },
+                headerTitleStyle: { fontWeight: 'bold' },
+            }}
+        >
             <NavigationStack.Screen
                 name="AllPlayersScreen"
                 component={AllPlayersScreen}
@@ -19,5 +24,5 @@ export default function StackNavigation() {
                 options={{ title: 'Kings League' }}
             />
         </NavigationStack.Navigator>
-    )
+    );
 }
