@@ -1,5 +1,6 @@
+
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, TouchableOpacity } from 'react-native';
+import { View, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { getTeams } from '../services/apikl';
 import TeamCard from '../components/TeamCard';
 import { useNavigation } from '@react-navigation/native';
@@ -17,7 +18,7 @@ export default function AllPlayersScreen() {
     }, []);
 
     return (
-        <View>
+        <View style={styles.screenContainer}>
             <FlatList
                 data={teams}
                 keyExtractor={(item) => item.id.toString()}
@@ -35,4 +36,10 @@ export default function AllPlayersScreen() {
             />
         </View>
     );
-}
+};
+
+const styles = StyleSheet.create({
+    screenContainer: {
+        flex: 1,
+    },
+});
