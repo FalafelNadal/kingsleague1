@@ -41,5 +41,6 @@ export default function AllPlayersScreen() {
 const styles = StyleSheet.create({
     screenContainer: {
         flex: 1,
+        backgroundColor: "black",
     },
 });
